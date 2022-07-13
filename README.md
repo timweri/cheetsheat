@@ -32,6 +32,8 @@ Iterate through `nums`, for each `v`:
 -  Append to the longest **active** subsequence by checking `tail < v`.
 -  Otherwise, find the longest subsequence where we can replace the tail where `v < tail` because having `v` as tail guarantee longer subsequence with the same prefix.
 
+A is now a sorted array. Use binary search to find the right tail.
+
 Complexities:
 - Time: `O(n log n)`
 - Space: `O(n)`

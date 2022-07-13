@@ -29,7 +29,7 @@ Complexities:
 Build a list `A` where `A[i]` is the smallest tail of all increasing subsequences seen so far of length `i+1` 
 (essentially keeping track of the tail of the best subsequence for each length).
 Iterate through `nums`, for each `v`:
--  Append to the longest **active** subsequence by checking `tail < v`.
+-  If `A[A.size() - 1] < v`, append `v` to the longest **active** subsequence.
 -  Otherwise, find the longest subsequence where we can replace the tail where `v < tail` because having `v` as tail guarantee longer subsequence with the same prefix.
 
 A is now a sorted array. Use binary search to find the right tail.

@@ -17,7 +17,7 @@ Find the length of the LCS between them.
 Keep a DP array `A` of size `|s1|*|s2|` where `A[i][j]` is the length of the LCS of `s1_i` and `s2_j`.
 We have:
 - If `s1[i] == s2[j]`, then `s1[i] == s2[j]` is the last letter in some LCS. `A[i][j] = A[i-1][j-1] + 1`
-- Otherwise, then `A[i][j] = max(A[i-1][j], A[i][j-1])` because at most one of the below is true. If both are true then contradiction.
+- Otherwise, then `A[i][j] = max(A[i-1][j], A[i][j-1])` because at least one of the below is true. If both are true then contradiction because we have `s1[i] == s2[j]`.
   - If `s1[i]` is not part of any LCS, then LCS of `s1_i` and `s2_j` is the same as `s1_{i-1}` and `s2_j`.
   - If `s2[j]` is not part of any LCS, then LCS of `s1_i` and `s2_j` is the same as `s1_i` and `s2_{j-1}`.
 

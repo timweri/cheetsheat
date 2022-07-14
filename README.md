@@ -5,6 +5,26 @@ Writing this down also helps me internalise the solutions.
 
 ## Easy
 
+## Medium
+
+### Longest Common Subsequence (LCS)
+
+Given to strings `s1` and `s2`.
+Find the length of the LCS between them.
+
+#### DP Bottom-Up
+
+Keep a DP array `A` of size `|s1|*|s2|` where `A[i][j]` is the length of the LCS of `s1_i` and `s2_j`.
+We have:
+- If `s1[i] == s2[j]`, then `s1[i] == s2[j]` is the last letter in some LCS. `A[i][j] = A[i-1][j-1] + 1`
+- Otherwise, then `A[i][j] = max(A[i-1][j], A[i][j-1])` because at most one of the below is true. If both are true then contradiction.
+  - If `s1[i]` is not part of any LCS, then LCS of `s1_i` and `s2_j` is the same as `s1_{i-1}` and `s2_j`.
+  - If `s2[j]` is not part of any LCS, then LCS of `s1_i` and `s2_j` is the same as `s1_i` and `s2_{j-1}`.
+
+Complexities:
+- Time: `O(nm)`
+- Space: `O(nm)`. Reducible to `O(max(m,n))` by using only 2 rows.
+
 ## Medium-Hard
 
 ### Longest Increasing Subsequence (LIS)
@@ -12,7 +32,7 @@ Writing this down also helps me internalise the solutions.
 `nums` is the array of input numbers.
 Find length of longest LIS in `nums`.
 
-#### Naive Approach
+#### DP Bottom Up
 
 Keep a DP array `A` where `A[i]` is the length of the LIS ending with `nums[i]`.
 We then have
@@ -45,7 +65,7 @@ Complexities:
 `nums` is the array of input numbers.
 Find the number of LIS in `nums`.
 
-#### Naive Approach
+#### DP Bottom Up
 
 Keep two DP arrays `L` and `Cnt` where
 - `A[i]` is the length of the LIS ending with `nums[i]`.

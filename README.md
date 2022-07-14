@@ -33,7 +33,8 @@ Iterate through `nums`, for each `v`:
 -  If `A[A.size() - 1] < v`, append `v` to the longest **active** subsequence.
 -  Otherwise, find the longest subsequence where we can replace the tail where `v < tail` because having `v` as tail guarantee longer subsequence with the same prefix.
 
-A is now a sorted array. Use binary search to find the right tail.
+`A` is now a sorted array. Use binary search to find the right tail.
+Answer is `A.size()`.
 
 Complexities:
 - Time: `O(n log n)`

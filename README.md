@@ -14,10 +14,11 @@ Find length of longest LIS in `nums`.
 
 #### Naive Approach
 
-Keep a DP array `A` where `A[i]` is the length of the LIS of `nums[:i+1]` (excluding `i+1`).
+Keep a DP array `A` where `A[i]` is the length of the LIS ending with `nums[i]`.
 We then have
 ```
-A[i] = max(A[j]) for 0 <= j < i such that nums[j] < nums[i]
+A[i] = max(A[j]) + 1 for 0 <= j < i such that nums[j] < nums[i]
+=> Answer is max(A[i])
 ```
 
 Complexities:
@@ -36,4 +37,25 @@ A is now a sorted array. Use binary search to find the right tail.
 
 Complexities:
 - Time: `O(n log n)`
+- Space: `O(n)`
+
+### Number of Longest Increasing Subsequence (LIS)
+
+`nums` is the array of input numbers.
+Find the number of LIS in `nums`.
+
+#### Naive Approach
+
+Keep two DP arrays `L` and `Cnt` where
+- `A[i]` is the length of the LIS ending with `nums[i]`.
+- `Cnt[i]` is the number of LIS ending with `nums[i]`.
+We then have
+```
+A[i] = max(A[j]) + 1 for 0 <= j < i such that nums[j] < nums[i]
+Cnt[i] = sum(Cnt[j]) for 0 <= j < i such that nums[j] < nums[i] and A[j] + 1 == A[i]
+=> Answer is sum(Cnt[i]) for all i such that A[i] == max(A[j])
+```
+
+Complexities:
+- Time: `O(n^2)`
 - Space: `O(n)`

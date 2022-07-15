@@ -15,11 +15,12 @@ Find the length of the LCS between them.
 #### DP Bottom-Up
 
 Keep a DP array `A` of size `|s1|*|s2|` where `A[i][j]` is the length of the LCS of `s1_i` and `s2_j`.
+Let `Z` be some LCS of `s1` and `s2`
 We have:
-- If `s1[i] == s2[j]`, then `s1[i] == s2[j]` is the last letter in some LCS. `A[i][j] = A[i-1][j-1] + 1`
-- Otherwise, then `A[i][j] = max(A[i-1][j], A[i][j-1])` because at least one of the below is true. If both are true then contradiction because we have `s1[i] == s2[j]`.
-  - If `s1[i]` is not part of any LCS, then LCS of `s1_i` and `s2_j` is the same as `s1_{i-1}` and `s2_j`.
-  - If `s2[j]` is not part of any LCS, then LCS of `s1_i` and `s2_j` is the same as `s1_i` and `s2_{j-1}`.
+- If `s1[i] == s2[j]`, then `s1[i] = s2[j]` is the last letter in `Z`. Otherwise, pick any other LCS, we can add `s1[i] = s2[j]` to extend it. `A[i][j] = A[i-1][j-1] + 1`
+- Otherwise, then `A[i][j] = max(A[i-1][j], A[i][j-1])` because at least one of the conditions below is true. If both are false, then contradiction since `s1[i] == s2[j]`.
+  - If `s1[i]` is not the tail of `Z`, then LCS of `s1_i` and `s2_j` is the same as `s1_{i-1}` and `s2_j`.
+  - If `s2[j]` is not the tail of `Z`, then LCS of `s1_i` and `s2_j` is the same as `s1_i` and `s2_{j-1}`.
 
 Complexities:
 - Time: `O(nm)`

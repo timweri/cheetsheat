@@ -86,6 +86,37 @@ Complexities:
 - Time: `O(n^2)`
 - Space: `O(n)`
 
+### Edit Distance \[Medium-Hard\]
+
+Given two strings `s1` and `s2`, return the minimum number of operations required to convert `s1` to `s2`.
+3 Actions: Insert, Delete and Replace.
+
+#### Top-Down Memoization
+
+Have a DP array `A` of size `(m+1)*(n+1)` where `A[i][j]` is the edit distance between `s1[:i]` and `s2[:j]`.
+
+If `s1[-1] == s2[-1]`, no need for any action.
+If not, then take the best (min) of insert, delete and replace.
+Insert and delete corresponds to moving left and up in the DP array.
+Replace corresponds to moving diagonally top left in the DP array.
+
+Complexities:
+- Time: `O(mn)`
+- Space: `O(mn)`
+
+#### Bottom-Up DP
+
+Have a DP array `A` of size `(m+1)*(n+1)` where `A[i][j]` is the edit distance between `s1[:i]` and `s2[:j]`.
+
+If `s1[i] == s2[j]`, then no need for any action.
+If not, then take the best (min) of insert, delete and replace.
+Insert and delete corresponds to moving right and down in the DP array.
+Replace corresponds to moving diagonally bottom right in the DP array.
+
+Complexities:
+- Time: `O(mn)`
+- Space: `O(mn)`
+
 ## Bit Manipulations
 
 ### Bitwise AND of Numbers Range \[Easy\]

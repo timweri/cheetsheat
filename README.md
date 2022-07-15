@@ -3,11 +3,9 @@
 Concise notes to prepare for algorithm questions in technical interviews.
 Writing this down also helps me internalise the solutions.
 
-## Easy
+## Dynamic Programming
 
-## Medium
-
-### Longest Common Subsequence (LCS)
+### Longest Common Subsequence (LCS) \[Medium\]
 
 Given to strings `s1` and `s2`.
 Find the length of the LCS between them.
@@ -26,7 +24,7 @@ Complexities:
 - Time: `O(nm)`
 - Space: `O(nm)`. Reducible to `O(max(m,n))` by using only 2 rows.
 
-### Delete Operation for Two Strings
+### Delete Operation for Two Strings \[Medium\]
 
 Use LCS. Answer is `m + n - 2*|LCS|`.
 
@@ -34,9 +32,7 @@ Complexities:
 - Time: `O(nm)`
 - Space: `O(nm)`. Reducible to `O(max(m,n))` by using only 2 rows.
 
-## Medium-Hard
-
-### Longest Increasing Subsequence (LIS)
+### Longest Increasing Subsequence (LIS) \[Medium-Hard\]
 
 `nums` is the array of input numbers.
 Find length of longest LIS in `nums`.
@@ -69,7 +65,7 @@ Complexities:
 - Time: `O(n log n)`
 - Space: `O(n)`
 
-### Number of Longest Increasing Subsequence (LIS)
+### Number of Longest Increasing Subsequence (LIS) \[Medium-Hard\]
 
 `nums` is the array of input numbers.
 Find the number of LIS in `nums`.
@@ -89,3 +85,21 @@ Cnt[i] = sum(Cnt[j]) for 0 <= j < i such that nums[j] < nums[i] and A[j] + 1 == 
 Complexities:
 - Time: `O(n^2)`
 - Space: `O(n)`
+
+## Bit Manipulations
+
+### Bitwise AND of Numbers Range \[Easy\]
+
+Given two integers `left` and `right` that represent the range `[left, right]`, return the bitwise AND of all numbers in this range, inclusive.
+
+#### Bit Scan Approach
+
+Any bit difference between `left` and `right` means an element will have that bit to be 0.
+So the answer is all the bits `left` and `right` share.
+Since it is a range, they most likely share left-most bits.
+So, scan from left to right and `OR` the current bit to the result until first diff bit.
+
+Complexities:
+- Time: `O(number of bits)`
+- Space: `O(1)`
+- 

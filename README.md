@@ -102,4 +102,3 @@ So, scan from left to right and `OR` the current bit to the result until first d
 Complexities:
 - Time: `O(number of bits)`
 - Space: `O(1)`
-- 

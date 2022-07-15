@@ -26,6 +26,14 @@ Complexities:
 - Time: `O(nm)`
 - Space: `O(nm)`. Reducible to `O(max(m,n))` by using only 2 rows.
 
+### Delete Operation for Two Strings
+
+Use LCS. Answer is `m + n - 2*|LCS|`.
+
+Complexities:
+- Time: `O(nm)`
+- Space: `O(nm)`. Reducible to `O(max(m,n))` by using only 2 rows.
+
 ## Medium-Hard
 
 ### Longest Increasing Subsequence (LIS)

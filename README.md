@@ -163,3 +163,28 @@ So, scan from left to right and `OR` the current bit to the result until first d
 Complexities:
 - Time: `O(number of bits)`
 - Space: `O(1)`
+
+## Math
+
+### Integer Break \[Medium\]
+
+Given an integer `n`, break it into the sum of `k` positive integers, where `k >= 2`, and maximize the product of those integers.
+Return the maximum product you can get.
+
+#### Math way
+
+For any factor `f >= 4`, `2(f-2) = 2f - 4 >= f` so we can break `f` up and get bigger.
+We have `3*3*3 > 2*2*2*1` so `3` is better and `2` can be used at most twice.
+
+For special cases where `n` is too small, since we need at least 2 factors, we have to break up `n` into 1s and 2s:
+- `n = 2`: `1*1 = 1`
+- `n = 3`: `1*2 = 2`
+
+For normal cases, we have
+- `n % 3 = 0`: Just split all into 3s => `3 ** (n/3)`
+- `n % 3 = 1`: `2*2 > 3*1` and `n >= 4` => `2 * 2 * 3**((n-4)/3)`
+- `n % 3 = 2`: `2 * 3**((n-2)/3)`
+
+Complexities:
+- Time: `O(log(n))`
+- Space: `O(1)`

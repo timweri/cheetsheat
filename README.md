@@ -131,6 +131,22 @@ For each recursion call, we go through each coin value. We have
 A[i] = min(A[i - j]) + 1 for each coin value
 ```
 
+Complexities:
+- Time: `O(n*amount)`
+- Space: `O(amount)`
+
+#### Bottom-Up Iterative
+Keep a DP array `A` of size `amount + 1` where `A[i]` is the min number of coins for amount `i`.
+`A[0] = 0` obviously.
+We then again have
+```
+A[i] = min(A[i - j]) + 1 for each coin value
+```
+
+Complexities:
+- Time: `O(n*amount)`
+- Space: `O(amount)`
+
 ## Bit Manipulations
 
 ### Bitwise AND of Numbers Range \[Medium\]

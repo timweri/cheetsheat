@@ -117,6 +117,20 @@ Complexities:
 - Time: `O(mn)`
 - Space: `O(mn)`
 
+### Coin Change \[Medium\]
+
+You are given an integer array `coins` representing coins of different denominations and an integer amount representing a total amount of money.
+Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return `-1`.
+You may assume that you have an infinite number of each kind of coin.
+
+#### Top-Down Memoization
+
+Keep a DP array `A` of size `amount + 1` where `A[i]` is the min number of coins for amount `i`.
+For each recursion call, we go through each coin value. We have
+```
+A[i] = min(A[i - j]) + 1 for each coin value
+```
+
 ## Bit Manipulations
 
 ### Bitwise AND of Numbers Range \[Medium\]

@@ -188,3 +188,18 @@ For normal cases, we have
 Complexities:
 - Time: `O(log(n))`
 - Space: `O(1)`
+
+## Others
+
+### Shuffle Array
+
+Given an integer array `nums`, design an algorithm to randomly shuffle the array. All permutations of the array should be equally likely as a result of the shuffling.
+
+#### Use Randomization Module
+
+Initialize a RNG `rand`.
+For each shuffle, for each number, just swap with a random index.
+
+Complexities:
+- Time: `O(n)`
+- Space: `O(n)`

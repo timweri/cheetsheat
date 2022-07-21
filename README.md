@@ -3,6 +3,34 @@
 Concise notes to prepare for algorithm questions in technical interviews.
 Writing this down also helps me internalise the solutions.
 
+## Array
+
+### Maximum Subarray \[Medium\]
+
+Given an integer array `nums`, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
+
+#### Scan
+
+If next number `nums[i+1]` is at least the Maximum Subarray Sum containing `nums[i]` (`nums[i+1] >= nums[i+1] + sum`), better to start a new subarray from `nums[i+1]`.
+Otherwise, it's better to add `nums[i+1]` to current Subarray.
+Remove leading negative elements to maximize sum.
+
+Complexities:
+- Time: `O(n)`
+- Space: `O(1)`
+
+#### DP
+
+`A` is the DP array of size `n`.
+`A[i]` is the Maximum Subarray Sum for `nums[:i+1]` that includes `nums[i]`.
+```
+A[i] = nums[i] >= A[i-1] + nums[i] ? nums[i] : A[i-1] + nums[i];
+```
+
+Complexities:
+- Time: `O(n)`
+- Space: `O(n)`
+
 ## Dynamic Programming
 
 ### Longest Common Subsequence (LCS) \[Medium\]

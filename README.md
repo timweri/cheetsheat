@@ -5,6 +5,19 @@ Writing this down also helps me internalise the solutions.
 
 ## Array
 
+### Two Sum \[Easy\]
+
+Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`.
+You may not use the same element twice.
+
+#### Hash Map
+
+Use hash map.
+
+Complexities:
+- Time: `O(n)`
+- Space: `O(n)`
+
 ### Maximum Subarray \[Medium\]
 
 Given an integer array `nums`, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.

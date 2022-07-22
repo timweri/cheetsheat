@@ -3,6 +3,8 @@
 Concise notes to prepare for algorithm questions in technical interviews.
 Writing this down also helps me internalise the solutions.
 
+Credits: Leetcode
+
 ## Array
 
 ### Two Sum \[Easy\]
@@ -31,6 +33,16 @@ Start placing the largest element between the two into `nums1`.
 Complexities:
 - Time: `O(n)`
 - Space: `O(1)`
+
+### Intersection of Two Arrays II \[Easy\]
+
+Given two integer arrays `nums1` and `nums2`, return an array of their intersection. Each element in the result must appear as many times as it shows in both arrays and you may return the result in any order.
+
+#### Frequency Hash Map
+
+Complexities:
+- Time: `O(m + n)`
+- Space: `O(min(m,n))`
 
 ### Maximum Subarray \[Medium\]
 

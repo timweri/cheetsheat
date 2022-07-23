@@ -40,9 +40,30 @@ Given two integer arrays `nums1` and `nums2`, return an array of their intersect
 
 #### Frequency Hash Map
 
+If one array is big and one is small, put the small array in hash map.
+
 Complexities:
 - Time: `O(m + n)`
-- Space: `O(min(m,n))`
+- Space: `O(m + n)`
+
+#### Sort
+
+Can use external sort if both arrays are too big.
+
+Complexities:
+- Time: `O(mlogm + nlogn)`
+- Space: `O(m + n)`
+
+### Best Time to Buy and Sell Stock \[Easy\]
+
+#### Linear Scan
+
+Scan for low prices to buy. 
+If price is lower than lowest, buy then as any higher price that can make more profit with the old low can make even more profit with new low.
+
+Complexities:
+- Time: `O(n)`
+- Space: `O(1)`
 
 ### Maximum Subarray \[Medium\]
 

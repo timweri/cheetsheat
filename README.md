@@ -56,10 +56,28 @@ Complexities:
 
 ### Best Time to Buy and Sell Stock \[Easy\]
 
+Given an array of prices of stock on each day, we can choose ONE day to buy and ONE day to sell.
+Find max profit.
+
 #### Linear Scan
 
 Scan for low prices to buy. 
 If price is lower than lowest, buy then as any higher price that can make more profit with the old low can make even more profit with new low.
+
+Complexities:
+- Time: `O(n)`
+- Space: `O(1)`
+
+### Best Time to Buy and Sell Stock II \[Medium\]
+
+Given an array of prices of stock on each day, each day we can buy or sell.
+We can't hold 2 stocks at the same time.
+Selling and buying on the same day is allowed.
+Find max profit.
+
+#### Linear Scan
+
+Just buy and sell if `prices[i] > prices[i-1]`.
 
 Complexities:
 - Time: `O(n)`

@@ -122,8 +122,7 @@ Complexities:
 
 #### Godly Optimized DP
 
-TODO:
-Since our inner max value `max(A[k-1][j-1] + - prices[j])` only required the lookback of 1 day, we can just keep
+Since our inner max value `max(A[k-1][j-1] + - prices[j])` only required the lookback of 1 day, we can just keep information for
 2 days.
 
 Complexities:

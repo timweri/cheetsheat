@@ -83,6 +83,53 @@ Complexities:
 - Time: `O(n)`
 - Space: `O(1)`
 
+### Best Time to Buy and Sell Stock III \[Hard\]
+
+Given an array of prices of stock on each day, each day we can buy or sell.
+We can't hold 2 stocks at the same time.
+Selling and buying on the same day is allowed.
+We can use upto 2 transactions.
+Find max profit.
+
+#### Dynamic Programming
+
+```
+A[k][i] = max profit on day i, using k transactions
+```
+If, for transaction `k`, we don't do anything on day `i`, then `A[k][i] = A[k][i-1]`.
+If, we decide to sell on day `i`, then `A[k][i] = max(A[k-1][j-1] + prices[i] - prices[j])` for `j < i`, where `j` is the day we buy the stock we sell.
+So we have
+```
+A[k][i] = max(A[k][i-1], A[k-1][j-1] + prices[i] - prices[j]) for j < i
+```
+
+Complexities:
+- Time: `O(kn^2)`
+- Space: `O(kn)`
+
+#### Optimized DP
+
+We can optimize this by using this formulae:
+```
+A[k][i] = max(A[k][i-1], prices[i] + max(A[k-1][j-1] + - prices[j])) for j < i
+```
+
+This allows us to calculate `max(A[k-1][j-1] + - prices[j])` without using a second linear loop.
+
+Complexities:
+- Time: `O(kn)`
+- Space: `O(kn)`
+
+#### Godly Optimized DP
+
+TODO:
+Since our inner max value `max(A[k-1][j-1] + - prices[j])` only required the lookback of 1 day, we can just keep
+2 days.
+
+Complexities:
+- Time: `O(kn)`
+- Space: `O(k)`
+
 ### Maximum Subarray \[Medium\]
 
 Given an integer array `nums`, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.

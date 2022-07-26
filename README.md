@@ -155,6 +155,38 @@ Complexities:
 - Time: `O(n)`
 - Space: `O(n)`
 
+## Linked List
+
+### Linked List Cycle \[Easy\]
+
+Detect cycle in a linked list.
+
+#### Floyd's Cycle Detection Algorithm
+
+Have a slow and fast pointer.
+
+Do in a loop:
+- Increment slow 1 step at a time.
+- Increment fast by 2 steps at a time.
+- If loop end is found => no loop
+- If fast is same as slow => loop detected
+
+Let `m` be the length of the loop.
+So, `n-m` is the length before the loop.
+
+If there is no cycle, it takes `O(n)` for fast to find the end of the loop.
+
+If there is a cycle:
+- It takes `n-m` steps for slow to enter the loop, by then, fast should be in the loop.
+- Every iteration, the gap between fast and slow increases by 1.
+- fast and slow will meet when the distance is `m` or divisible by `m`.
+- It takes at most `m` steps for the distance to reach `m`.
+- Hence, it takes `n - m + m = n = O(n)` for fast and slow to meet.
+
+Complexities:
+- Time: `O(n)`
+- Space: `O(1)`
+
 ## Dynamic Programming
 
 ### Longest Common Subsequence (LCS) \[Medium\]

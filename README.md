@@ -83,12 +83,12 @@ Complexities:
 - Time: `O(n)`
 - Space: `O(1)`
 
-### Best Time to Buy and Sell Stock III \[Hard\]
+### Best Time to Buy and Sell Stock III and IV \[Hard\]
 
 Given an array of prices of stock on each day, each day we can buy or sell.
 We can't hold 2 stocks at the same time.
 Selling and buying on the same day is allowed.
-We can use upto 2 transactions.
+We can use upto `k` transactions.
 Find max profit.
 
 #### Dynamic Programming
@@ -111,10 +111,10 @@ Complexities:
 
 We can optimize this by using this formulae:
 ```
-A[k][i] = max(A[k][i-1], prices[i] + max(A[k-1][j-1] + - prices[j])) for j < i
+A[k][i] = max(A[k][i-1], prices[i] + max(A[k-1][j-1] - prices[j])) for j < i
 ```
 
-This allows us to calculate `max(A[k-1][j-1] + - prices[j])` without using a second linear loop.
+This allows us to calculate `max(A[k-1][j-1] - prices[j])` without using a second linear loop.
 
 Complexities:
 - Time: `O(kn)`
@@ -122,7 +122,7 @@ Complexities:
 
 #### Godly Optimized DP
 
-Since our inner max value `max(A[k-1][j-1] + - prices[j])` only required the lookback of 1 day, we can just keep information for
+Since our inner max value `max(A[k-1][j-1] - prices[j])` only required the lookback of 1 day, we can just keep information for
 2 days.
 
 Complexities:

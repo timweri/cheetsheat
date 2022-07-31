@@ -187,6 +187,12 @@ Complexities:
 - Time: `O(n)`
 - Space: `O(1)`
 
+## Tree
+
+### Validate Binary Search Tree \[Medium\]
+
+REMINDER: Keep track of the range of values the nodes can take.
+
 ## Dynamic Programming
 
 ### Longest Common Subsequence (LCS) \[Medium\]

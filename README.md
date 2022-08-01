@@ -191,7 +191,35 @@ Complexities:
 
 ### Validate Binary Search Tree \[Medium\]
 
+Given a Binary Tree. Check if it's a valid BST.
+
+#### Approach
+
 REMINDER: Keep track of the range of values the nodes can take.
+
+Complexities:
+- Time: `O(n)`
+- Space: `O(1)`
+
+### Lowest Common Ancestor of a Binary Search Tree \[Easy-Medium\]
+
+Given 3 BSTs `T`, `p` and `q`. `p` and `q` are subtrees of `T`.
+Find the LCA of `p` and `q` in `T`.
+
+#### Approach
+
+Check if current `root` is `p` or `q`:
+
+- If `root` is neither:
+  - the LCA is lower. Search `root->left` and `root->right`.
+  - `root->left` AND `root->right` returns something => `root` is the LCA
+  - Only one returns => the returned value is the LCA.
+  - If both returns, then current `root` is the LCA.
+- If `root` is one: returns `root` as the LCA cannot be lower.
+
+Complexities:
+- Time: `O(n)`
+- Space: `O(1)`
 
 ## Dynamic Programming
 

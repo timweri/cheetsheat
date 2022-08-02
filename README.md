@@ -221,6 +221,27 @@ Complexities:
 - Time: `O(n)`
 - Space: `O(1)`
 
+### Two Sum IV (BST) \[Medium\]
+
+Given `k`, find two nodes in a BST that sum up to `k`.
+
+#### Hashmap
+
+Just visit every node and keep track of things in a hashmap like normal two sum.
+
+Complexities:
+- Time: `O(n)`
+- Space: `O(n)`
+
+#### Iterators
+
+BST is kind of equivalent to a sorted array.
+Write an inorder iterator and reverse inorder iterator for the BST and use the two pointer method.
+
+Complexities:
+- Time: `O(n)`
+- Space: `O(log n)`
+
 ## Dynamic Programming
 
 ### Longest Common Subsequence (LCS) \[Medium\]

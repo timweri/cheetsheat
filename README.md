@@ -54,6 +54,20 @@ Complexities:
 - Time: `O(mlogm + nlogn)`
 - Space: `O(m + n)`
 
+### Single Number \[Easy\]
+
+Given an array of numbers where each number occurs twice except for one number.
+Find this single number.
+
+#### XOR
+
+Just XOR the whole array.
+The duplicates will cancel themselves out.
+
+Complexities:
+- Time: `O(n)`
+- Space: `O(1)`
+
 ### Best Time to Buy and Sell Stock \[Easy\]
 
 Given an array of prices of stock on each day, we can choose ONE day to buy and ONE day to sell.

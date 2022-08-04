@@ -68,6 +68,26 @@ Complexities:
 - Time: `O(n)`
 - Space: `O(1)`
 
+### Majority Element \[Easy-Medium\]
+
+Find the majority element in an array.
+The majority element is the element that appears more than `floor(n / 2)` times. You may assume that the majority element always exists in the array.
+
+#### Boyer-Moore Majority Vote Algorithm
+
+Keep track of the current majority number and the vote count.
+
+If the next number is the current majority number, increment the vote count.
+If not:
+- if the vote count is 0, we have a new majority candidate
+- else, decreemnt the vote count and keep the current majority candidate
+
+This works because there is enough vote for the majority number to fight all other numbers.
+
+Complexities:
+- Time: `O(n)`
+- Space: `O(1)`
+
 ### Best Time to Buy and Sell Stock \[Easy\]
 
 Given an array of prices of stock on each day, we can choose ONE day to buy and ONE day to sell.

@@ -224,6 +224,21 @@ Complexities:
 - Time: `O(n)`
 - Space: `O(n)`
 
+### Merge Intervals \[Medium\]
+
+Given an array `intervals`, merge all overlapping intervals and return the final array.
+
+#### Sort
+
+Sort by the starting time.
+Compare the last interval in the result with every interval in `intervals`.
+If not overlapping, since sorted by start, all subsequent intervals cannot overlap => new element in the result array.
+If overlap, update the end time of the last element in the result.
+
+Complexities:
+- Time: `O(n log n)`
+- Space: `O(sort)`
+
 ## Linked List
 
 ### Linked List Cycle \[Easy\]

@@ -163,6 +163,41 @@ Complexities:
 - Time: `O(kn)`
 - Space: `O(k)`
 
+### 3Sum \[Medium\]
+
+Given an integer array `nums`. Find all triplets `[nums[i], nums[j], nums[k]]` such that `i`, `j` and `k` are all distinct and `nums[i] + nums[j] + nums[k] == 0`.
+Avoid duplicates.
+
+#### Two Pointer
+
+Sort the array since sorting is only `O(n log n)`. This will not affect our overall runtime of `O(n^2)`.
+Fix the first number to be each number from left to right.
+Run two pointer on the remaining portion of the array.
+
+To avoid duplicates, skip the subsequent contiguous duplicated elements for each position.
+
+Optimizations:
+- If `nums[i] > 0`, there's no way sum is 0 because `nums` is sorted.
+
+Complexities:
+- Time: `O(n^2)`
+- Space: `O(1)`
+
+#### Set
+
+Partition `nums` into 3 separate arrays: zero, negative and positive.
+Make 2 lookup sets: negative and positive.
+
+Cases: 
+- If `|zero| >= 3`, add `[0,0,0]` to answer.
+- If there is at least 1 zero, whatever exists in both negative and positive sets form an answer.
+- For all pairs of negatives, the last element must be in the positive
+- For all pairs of positives, the last element must be in the negative
+
+Complexities
+- Time: `O(n^2)`
+- Space: `O(n)`
+
 ### Maximum Subarray \[Medium\]
 
 Given an integer array `nums`, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.

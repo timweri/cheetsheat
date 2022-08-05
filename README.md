@@ -239,6 +239,18 @@ Complexities:
 - Time: `O(n log n)`
 - Space: `O(sort)`
 
+### Search a 2D Matrix II \[Medium\]
+
+Search for `target` in a `m x n` matrix where each row and column are sorted in ascending order.
+
+#### Binary Search
+
+For each row that may contain `target`, perform binary search.
+
+Complexities:
+- Time: `O(m log n)`
+- Space: `O(1)`
+
 ## Linked List
 
 ### Linked List Cycle \[Easy\]

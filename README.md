@@ -251,6 +251,16 @@ Complexities:
 - Time: `O(m log n)`
 - Space: `O(1)`
 
+#### Greedy
+
+Search from top right.
+If undershoot, move down because down increases; not left because left decreases.
+If overshoot, move left because left decreases; not up because we've been there or been to the right of it
+
+Complexities:
+- Time: `O(m + n)`
+- Space: `O(1)`
+
 ## Linked List
 
 ### Linked List Cycle \[Easy\]

@@ -254,8 +254,8 @@ Complexities:
 #### Greedy
 
 Search from top right.
-If undershoot, move down because down increases; not left because left decreases.
-If overshoot, move left because left decreases; not up because we've been there or been to the right of it
+If `matrix[i][j] < target`, move down because everything on the left is even smaller (eliminated row).
+If `matrix[i][j] > target`, move left because everything below is even bigger (eliminated column);
 
 Complexities:
 - Time: `O(m + n)`

@@ -288,6 +288,23 @@ Complexities:
 - Time: `O(n log n)`
 - Space: `O(sort)`
 
+### Subarray Sum Equals K \[Medium\]
+
+Given an array of integers `nums` and integer `k`, return the number of subarrays whose sum is `k`.
+
+#### HashMap and Prefix Sum
+
+HashMap `A` maps the value of prefix sum to the number of occurences of that sum.
+Loop from left, keep track of the current prefix sum.
+For each element, update the prefix sum and then the HashMap.
+
+If current sum is `sum`, we need some prefix sum of value `sum - target`.
+Just look up in `A` to see how many prefix sums of this value we have and increase count.
+
+Complexities:
+- Time: `O(n)`
+- Space: `O(n)`
+
 ### Increasing Triplet Subsequence \[Medium-Hard\]
 
 Given an integer array `nums`. Determine whether `nums` contains an increasing subsequence of size 3.

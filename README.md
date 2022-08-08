@@ -261,6 +261,27 @@ Complexities:
 - Time: `O(m + n)`
 - Space: `O(1)`
 
+### Non-Overlapping Intervals
+
+Given an array of intervals, find the minimum number of intervals we have to delete to obtain the maximum number of non-overlapping intervals.
+
+#### Greedy 1 (Sort by start time)
+
+Sort intervals by start time.
+
+
+Complexities:
+- Time: `O(n log n)`
+- Space: `O(sort)`
+
+#### Greedy 2 (Sort by end time)
+
+It's the number of intervals minus answer of the Scheduling Interval problem, which is the maximum number of non-overlapping intervals.
+
+Complexities:
+- Time: `O(n log n)`
+- Space: `O(sort)`
+
 ## Linked List
 
 ### Linked List Cycle \[Easy\]

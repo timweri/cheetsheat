@@ -288,6 +288,18 @@ Complexities:
 - Time: `O(n log n)`
 - Space: `O(sort)`
 
+### Increasing Triplet Subsequence \[Medium-Hard\]
+
+Given an integer array `nums`. Determine whether `nums` contains an increasing subsequence of size 3.
+
+#### LIS
+
+Use LIS algorithm. Terminates when we find a subsequence of size 3.
+
+Complexities:
+- Time: `O(n * log 3) = O(n)`
+- Space: `O(3) = O(1)`
+
 ## Linked List
 
 ### Linked List Cycle \[Easy\]

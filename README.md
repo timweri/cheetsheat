@@ -268,7 +268,13 @@ Given an array of intervals, find the minimum number of intervals we have to del
 #### Greedy 1 (Sort by start time)
 
 Sort intervals by start time.
-
+We keep track of the last interval we chose, named `cur`.
+Then we look for the next interval to be added.
+Prefer ones that end earlier as anything that does not overlap with the later end will also not overlap with the earlier end but not the other way around.
+We have 3 cases:
+- No overlapping: `f_cur <= s_next`. No need to delete anything, `cur = next`.
+- Partial overlapping: `s_next < f_cur <= f_next`. Delete later end.
+- Total overlapping: `next` contained within `cur`. Delete cur. `cur = next`.
 
 Complexities:
 - Time: `O(n log n)`

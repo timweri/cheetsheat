@@ -349,6 +349,21 @@ Complexities:
 - Time: `O(n)`
 - Space: `O(1)`
 
+## String
+
+### Group Anagrams \[Medium\]
+
+Given an array of strings, return the array of all groups of anagrams.
+
+#### HashMap + Count Sort
+
+Use hash map to map string to index of anagram group.
+To make all anagrams use the same lookup string, use count sort.
+
+Complexities:
+- Time: `O(number of groups * size of string)`
+- Space: `O(number of groups)`
+
 ## Tree
 
 ### Validate Binary Search Tree \[Medium\]

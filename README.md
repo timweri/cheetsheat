@@ -364,6 +364,19 @@ Complexities:
 - Time: `O(number of groups * size of string)`
 - Space: `O(number of groups)`
 
+### Multiply Strings \[Medium\]
+
+Given 2 non-negative integers as strings `s1` and `s2`, multiply them.
+
+#### Digit by Digit
+
+Make an array of size `|s1| + |s2|`.
+Multiply each pair of digits in `s1` and `s2`, store the result and overflow at the appropriate indices.
+
+Complexities:
+- Time: `O(|s1| * |s2|)`
+- Space: `O(|s1| + |s2|)`
+
 ## Tree
 
 ### Validate Binary Search Tree \[Medium\]

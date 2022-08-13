@@ -349,6 +349,30 @@ Complexities:
 - Time: `O(n)`
 - Space: `O(1)`
 
+### Linked List Cycle II \[Medium\]
+
+Find the entry point of cycle in a linked list.
+
+#### Floyd's CDA with a Twist
+
+Use Floyd's Cycle Detection Algorithm to detect the cycle and find the meeting point of
+the fast and slow pointer.
+
+Let `M` be the length from head to entry point.
+Let `N` be the length from entry point to meeting point.
+Let `C` be the length of the cycle.
+
+The fast pointer travels `M + N + C` to reach the meeting point.
+The slow pointer travels `M + N` to reach the meeting point.
+We have `M + N + C = 2(M + N)`, hence `M = C - N`.
+This means the length from head to entry point is the same as meeting point to entry point.
+
+So we just need to traverse from head and from meeting point till we meet at entry point.
+
+Complexities:
+- Time: `O(n)`
+- Space: `O(1)`
+
 ## String
 
 ### Group Anagrams \[Medium\]

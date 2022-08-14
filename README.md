@@ -373,6 +373,43 @@ Complexities:
 - Time: `O(n)`
 - Space: `O(1)`
 
+### Intersection of Two Linked Lists \[Medium\]
+
+Given two linked lists `l1` and `l2`, find the start of the merge of two lists.
+
+#### Hash Map
+
+Hash Map every linked list node of `l1`. Traverse `l2` and look up the map.
+
+Complexities:
+- Time: `O(m + n)`
+- Space: `O(m)`
+
+#### Find length first
+
+Traverse both list and find the length of each.
+The goal is to start from the same distance away from the merge.
+
+If the merge exists, then it has length at most `min(m,n)`.
+So we just have to start traversing from length `min(m,n)`.
+
+Complexities:
+- Time: `O(m + n)`
+- Space: `O(1)`
+
+#### Simultaneous traverses
+
+Say the merge has length `k`.
+Then the last `k` nodes of both `l1` and `l2` are the same.
+
+We have `l1 + l2 = l1 + (l2 - k) + k` and `l2 + l1 = l2 + (l1 - k) + k`.
+Since `l1 + (l2 - k) = l2 + (l1 - k)`, if we traverses two lists `l1->l2` and `l2->l1`,
+we will reach the merge at the same time.
+
+Complexities:
+- Time: `O(m + n)`
+- Space: `O(1)`
+
 ## String
 
 ### Group Anagrams \[Medium\]

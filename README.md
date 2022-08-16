@@ -493,6 +493,25 @@ Complexities:
 - Time: `O(n)`
 - Space: `O(log n)`
 
+## Stack/Queue
+
+### Minimum Remove to Make Valid Parentheses \[Medium\]
+
+Given a string with letters and parentheses, remove the min amount of parentheses to make it valid.
+
+#### Stack
+
+#### Delete
+
+Go from left to right and count the amount of unclosed parentheses (`unclosed`).
+If `unclosed = 0`, then if we see `)`, there is nothing to close => delete `)`.
+
+At the end, if `unclosed > 0`, then go from right to left and delete the same amount of `(`.
+
+Complexities:
+- Time: `O(n)`
+- Space: `O(1)`
+
 ## Dynamic Programming
 
 ### Longest Common Subsequence (LCS) \[Medium\]

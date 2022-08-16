@@ -501,12 +501,26 @@ Given a string with letters and parentheses, remove the min amount of parenthese
 
 #### Stack
 
+Keep stack of index of brackets to delete.
+If we see `(`, just push. Any leftover `(` at the end will stay and be deleted.
+If we see `)`, if the top is a `(`, then pop a `(`. These two brackets are not in the stack so will not be deleted.
+
+Go through the stack and replace all invalid bracket with `#`.
+Build a new string and only add non-`#` characters.
+
+Complexities:
+- Time: `O(n)`
+- Space: `O(n)`
+
+
 #### Delete
 
 Go from left to right and count the amount of unclosed parentheses (`unclosed`).
-If `unclosed = 0`, then if we see `)`, there is nothing to close => delete `)`.
+If `unclosed = 0`, then if we see `)`, there is nothing to close => mark `)` for deletion by changing it to `#`.
 
-At the end, if `unclosed > 0`, then go from right to left and delete the same amount of `(`.
+Do the same from right to left.
+
+Build a string and only add non-`#` characters.
 
 Complexities:
 - Time: `O(n)`

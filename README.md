@@ -746,3 +746,66 @@ Just calculate the next number in the sequence and use Floyd's Cycle Detection t
 Complexities:
 - Time: `O(|sequence + cycle if exists|)`
 - Space: `O(1)`
+
+### Josephus Problem (Find the Winner of the Circular Game) \[Hard\]
+
+Given a circle of `n` people and a number `k`.
+Starting with person `1`, the person `i` will kill person `i + k - 1` in the circle.
+Then, continue with the next person after `i + k - 1`.
+Find the last survivor.
+
+#### Simulation
+
+We can keep a vector of remaining people.
+We simulate the problem and remove the person who is killed.
+Last person in the vector is the survivor.
+
+We run `n-1` iterations.
+For each iteration, it's `O(1)` to find the next victim and the next killer.
+However, deletion in the vector is `O(n)`.
+
+Complexities:
+- Time: `O(n^2)`
+- Space: `O(n)`
+
+#### Recursion Simulation
+
+Here, we will use `0`-indexing for numbering people.
+
+Induction Proof:
+
+Hypothesis: If `f(n, k)` is the last survivor for `(n,k)`, then `f(n+1, k) = (f(n,k) + k) % (n+1)` is the last survivor for `(n+1, k)`.
+
+Base Case: `f(1, k) = 0`. (`0`th person is the survivor)
+
+Inductive Step: Assume `f(n,k)` is the last survivor for `(n,k)`. We need to prove `f(n+1,k) = (f(n,k) + k) % (n+1)`.
+
+In `(n+1,k)`, we have that `k % (n+1)` is the next killer, moving the game to the state of `(n,k)`.
+This next killer is the starter of `(n,k)`, so in this new game state, the next killer is number `0`.
+
+In this new game state `(n,k)`, `f(n,k)` is the survivor.
+`f(n,k)` is numbered using this new numbering system.
+So `f(n,k)` is actually `(k + f(n,k)) % (n+1)` in `(n+1, k)`.
+
+Since `f(n,k) <= n - 1`, the person was first killed in `(n+1, k)`, which is `(k-1) % (n+1)` cannot be the survivor as
+`f(n,k)` is not big enough to go around to reach this killed person.
+
+Hence, `(k + f(n,k)) % (n + 1)` is the last survivor of `(n+1,k)`. QED?
+
+So, our recursive solution is:
+```
+f(n,k) = (f(n-1,k) + k) % n
+```
+
+Complexities:
+- Time: `O(n)`
+- Space: `O(n)`
+
+#### Iterative Simulation
+
+Same proof as the recursive case.
+However, we can write a bottom-up iterative solution.
+
+Complexities:
+- Time: `O(n)`
+- Space: `O(1)`

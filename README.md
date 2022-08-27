@@ -198,7 +198,7 @@ Complexities
 - Time: `O(n^2)`
 - Space: `O(n)`
 
-### Maximum Subarray \[Medium\]
+### Maximum Subarray Sum \[Medium\]
 
 Given an integer array `nums`, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
 
@@ -223,6 +223,31 @@ A[i] = nums[i] >= A[i-1] + nums[i] ? nums[i] : A[i-1] + nums[i];
 Complexities:
 - Time: `O(n)`
 - Space: `O(n)`
+
+### Maximum Subarray Product \[Medium\]
+
+Given an integer array `nums` (numbers can be negative), find a contiguous non-empty subarray within the array that has the largest product, and return the product.
+
+#### Scan
+
+Keep track of the best negative `neg` and best positive product `pos`.
+Since this is multiplying, unless the new num is `0`, the magnitude of `neg` and `pos` is non-decreasing.
+Once the new num is `0`, both have to reset to `0` since we only count subarrays.
+
+If current `num` is:
+- `num = 0`: then reset both `neg` and `pos` to `0`.
+- `num > 0`:
+  - signs of `neg * num` and `pos * num` won't change
+  - if `pos = 0`, it's better to set `pos := num`
+  - no matter what, `neg *= num`
+- `num < 0`:
+  - `neg * num` and `pos * num` switch sign
+  - if `neg = 0`, it's better to set `neg := num`
+  - no matter what, `neg = pos * num`
+
+Complexities:
+- Time: `O(n)`
+- Space: `O(1)`
 
 ### Merge Intervals \[Medium\]
 

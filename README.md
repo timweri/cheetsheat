@@ -435,6 +435,31 @@ Complexities:
 - Time: `O(m + n)`
 - Space: `O(1)`
 
+### Merge K Sorted List \[Medium-Hard\]
+
+#### Merge 2 Lists at a time
+
+We can merge two lists at at a time.
+
+Let the average length of each list be `n`.
+
+- First round, we have `k` lists of length `n`. Merging takes `O(k/2 * 2n) = O(kn)`.
+- Second round, we have `k/2` lists of length `2n`. Merging takes `O(k/4 * 4n) = O(kn)`.
+- We have `log k` rounds.
+
+Complexities:
+- Time: `O(kn log k)`
+- Space: `O(kn)`
+
+#### Min Heap
+
+Build a min heap containing the min item in each list. 
+Each time we add the min element to our result list and replace this min element in the min heap with the next element.
+
+Complexities:
+- Time: `O(n log k)`. `n` is the total number of elements in `k` lists. For each element, we insert and pop it into the heap, which is `O(log k)`.
+- Space: `O(k)`
+
 ## String
 
 ### Group Anagrams \[Medium\]

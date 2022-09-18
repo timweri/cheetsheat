@@ -576,6 +576,26 @@ Complexities:
 - Time: `O(n)`
 - Space: `O(1)`
 
+## Backtracking
+
+### Combination Sum \[Medium\]
+
+Given an array of distcint integers `candidates`.
+Return a list of all unique combinations of candidates where the sum is `target`.
+
+#### Backtracking
+
+We traverse the tree of all solutions using DFS.
+The maximum number of children for each tree is `N = |candidates|`.
+The target `target = T` and `M = min(candidates)`.
+
+The tree is an `N`-ary tree with depth `T/M`.
+This tree has a maximal size of `N^(T/M + 1)`.
+
+Complexities:
+- Time: `O(N^(T/M+1))` which is the upper bound on the total number of nodes in the tree. 
+- Space: `O(T/M)` which because of the deepest traversal using the smallest candidates.
+
 ## Dynamic Programming
 
 ### Longest Common Subsequence (LCS) \[Medium\]

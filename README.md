@@ -740,6 +740,20 @@ Complexities:
 - Time: `O(n*amount)`
 - Space: `O(amount)`
 
+## Monotonic Stack
+
+### Daily Temperatures
+
+Given an array of integers `temperatures` represents the daily temperatures, return an array answer such that `answer[i]` is the number of days you have to wait after the ith day to get a warmer temperature. If there is no future day for which this is possible, keep `answer[i] == 0` instead.
+
+#### Monotonic Stack
+
+Use a monotonic stack to store all the indices of the days where we haven't found a day with higher temperature.
+
+Complexities:
+- Time: We do at most `n` push and `n` pops. `O(n)`
+- Space: `O(n)`
+
 ## Bit Manipulations
 
 ### Bitwise AND of Numbers Range \[Medium\]
